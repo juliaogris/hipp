@@ -299,5 +299,27 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
+   grunt.registerTask('appengine-update', 'Upload to App Engine.', function() {
+        var spawn = require('child_process').spawn;
+        var PIPE = {stdio: 'inherit'};
+        var done = this.async();
+
+        spawn('appcfg.py', ['update', 'build/task-manager-angular'], PIPE).on('exit', function(status) {
+            done(status === 0);
+        });
+   });
+   grunt.registerTask('clean', 'Clean the whole build directory.', function() {
+        require('child_process').exec('rm -rdf build', this.async());
+   });
+
+   grunt.registerTask('run', 'Run app server.', function() {
+       var spawn = require('child_process').spawn;
+       var PIPE = {stdio: 'inherit'};
+       var done = this.async();
+       spawn('dev_appserver.py', ['.'], PIPE).on('exit', function(status) {
+          done(status === 0);
+       });
+    });
+
   grunt.registerTask('default', ['build']);
 };
