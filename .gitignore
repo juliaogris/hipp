@@ -5,3 +5,5 @@ dist
 app/components
 
 *.pyc
+
+app/.DS_Store
