@@ -3,7 +3,3 @@ dist
 .tmp
 .sass-cache
 app/components
-
-*.pyc
-
-app/.DS_Store
