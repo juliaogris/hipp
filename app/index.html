@@ -8,10 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/bootstrap.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -26,6 +28,16 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+
+    <div class="navbar" jo-navbar>
+      <div class="navbar-inner"> 
+        <ul class="nav">
+          <li class="active" data-match-route="/profile"><a href="#/profile">Profile</a></li>
+          <li data-match-route="/messages"><a href="#/messages">Messages</a></li>
+          <li data-match-route="/find"><a href="#/find">Find</a></li>
+        </ul>
+      </div>
+    </dvi>
     <div class="container" ng-view></div>
 
     <script src="components/angular/angular.js"></script>
@@ -36,6 +48,10 @@
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/directives/jo-navbar.js"></script>
+    <script src="scripts/controllers/profile.js"></script>
+    <script src="scripts/controllers/messages.js"></script>
+    <script src="scripts/controllers/find.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
